@@ -50,7 +50,7 @@ int Parser::eval(string text)
         case Object::Type::OperationMultiply: result = expression[0].getNumber() * expression[2].getNumber(); break;
         case Object::Type::OperationDivide: result = expression[0].getNumber() / expression[2].getNumber(); break;
         }
-        storage->replace(expression, result);
+        storage->replace(expression, Object(Object::Type::Number, result));
     }
     return 0;
 }
